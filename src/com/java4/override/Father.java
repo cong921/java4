@@ -1,11 +1,15 @@
 package com.java4.override;
 
+import junit.framework.Assert;
+
 public class Father {
 	protected int methodO(){
 		return 1;
 	}
 	public static void main(String[] args) {
 		int a=2;
-		System.out.println(assert(a>3));;
+		Assert.assertTrue(a>1);
+		Assert.failSame("sdfasdf");
+		System.out.println("sdf");
 	}
 }
