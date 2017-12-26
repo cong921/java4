@@ -1,4 +1,4 @@
-package com.java4.concurrent.notify.product_consumer;
+package com.java4.concurrent.product_consumer;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

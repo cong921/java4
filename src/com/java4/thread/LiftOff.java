@@ -1,5 +1,8 @@
 package com.java4.thread;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class LiftOff implements Runnable {
 	protected int countDown=10;
 	private static int taskCount=0;
@@ -17,6 +20,11 @@ public class LiftOff implements Runnable {
 			Thread.yield();
 		}
 	}
-	
+	public static void main(String[] args) {
+		ExecutorService executorService = Executors.newCachedThreadPool();
+		for(int i=0;i<10;i++)
+			executorService.execute(new LiftOff());
+		executorService.shutdown();
+	}
 	
 }
