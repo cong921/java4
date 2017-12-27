@@ -14,11 +14,11 @@ public class GreenhouseScheduler {
 	public String getThermostat() {
 		return thermostat;
 	}
-	public void setThermostat(String thermostat) {
+	public synchronized void setThermostat(String thermostat) {
 		this.thermostat = thermostat;
 	}
 	ScheduledThreadPoolExecutor scheduled = new ScheduledThreadPoolExecutor(10);
-	public void shedule(Runnable event, long delay) {
+	public synchronized void shedule(Runnable event, long delay) {
 		scheduled.schedule(event, delay, TimeUnit.MILLISECONDS);
 	}
 	public void repeat(Runnable event,long initialDelay,long period) {
